@@ -1,21 +1,18 @@
-import generateRandNums from './generateNumber.js';
-const container = document.querySelector('.container');
 class GenerateDiv {
-  constructor({ divQuantity }) {
-    this.divQuantity = divQuantity;
-    this.divHeight = this.divHeight;
-    generateRandNums.size = this.divQuantity;
-    generateRandNums.start();
+  constructor({ container, quantity, randNums }) {
+    this.quantity = quantity;
+    this.randNums = randNums;
+    this.container = container;
   }
   run() {
-    for (let i = 0; i < this.divQuantity; i++) {
+    for (let i = 0; i < this.quantity; i++) {
       const div = document.createElement('div');
-      div.style.height = `${generateRandNums.numbers[i]}%`;
-      container.appendChild(div);
+      div.style.height = `${this.randNums[i]}%`;
+      this.container.appendChild(div);
     }
   }
   reset() {
-    container.innerHTML = '';
+    this.container.innerHTML = '';
   }
 }
 
