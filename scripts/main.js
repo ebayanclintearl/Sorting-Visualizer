@@ -8,9 +8,11 @@ sliderRange.addEventListener('input', () => {
   renderDivs();
 });
 
-const divContainer = document.querySelector('.container');
+export const divContainer = document.querySelector('.container');
+
 const randNumbers = new RandomNumbers();
-export const divGenerator = new DivGenerator();
+const divGenerator = new DivGenerator();
+const bubbleSort = new BubbleSort();
 
 const renderDivs = () => {
   const rangeValue = document.querySelector('#myRange').value;
@@ -19,15 +21,15 @@ const renderDivs = () => {
   randNumbers.start();
 
   divGenerator.container = divContainer;
-  divGenerator.quantity = rangeValue;
   divGenerator.randNums = randNumbers.numbers;
 
   divGenerator.clear();
   divGenerator.start();
+  bubbleSort.arr = randNumbers.numbers;
+  DivConfig.resetDelay();
 };
 
 window.onload = renderDivs();
-const bubbleSort = new BubbleSort({ divGeneratorRef: divGenerator });
 const btnStart = document.querySelector('.btn.start');
 btnStart.addEventListener('click', () => {
   bubbleSort.start();

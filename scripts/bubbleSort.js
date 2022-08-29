@@ -1,8 +1,8 @@
 import DivConfig from './divConfig.js';
 
 class BubbleSort {
-  constructor({ divGeneratorRef }) {
-    this.arr = divGeneratorRef.divHeights;
+  constructor() {
+    this.arr = this.arr;
   }
   start() {
     for (let i = 0; i < this.arr.length - 1; i++) {

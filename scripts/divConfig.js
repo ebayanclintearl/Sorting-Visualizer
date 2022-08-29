@@ -1,8 +1,7 @@
-import { divGenerator } from './main.js';
+import { divContainer } from './main.js';
 let comulativeDelay = 0;
 class DivConfig {
   constructor({ index, height, color }) {
-    this.divGenerator = divGenerator;
     this.index = index;
     this.height = height;
     this.color = color;
@@ -11,13 +10,15 @@ class DivConfig {
   }
   timeOut() {
     setTimeout(() => {
-      this.updateDiv(this.index, this.height, this.color);
+      this.updateDiv();
     }, (comulativeDelay += this.delay));
   }
-  updateDiv(index, height, bgColor) {
-    let divs = this.divGenerator.divs;
-    divs[index].style.height = height + '%';
-    divs[index].style.backgroundColor = bgColor;
+  updateDiv() {
+    divContainer.childNodes[this.index].style.height = this.height + '%';
+    divContainer.childNodes[this.index].style.backgroundColor = this.color;
+  }
+  static resetDelay() {
+    comulativeDelay = 0;
   }
 }
 
