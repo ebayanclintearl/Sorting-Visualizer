@@ -1,12 +1,12 @@
-import { generateDivs } from './main.js';
+import { divGenerator } from './main.js';
 let comulativeDelay = 0;
-class GeneratedDivConfig {
+class DivConfig {
   constructor({ index, height, color }) {
-    this.generateDivs = generateDivs;
+    this.divGenerator = divGenerator;
     this.index = index;
     this.height = height;
     this.color = color;
-    this.delay = 5;
+    this.delay = 0.5;
     this.timeOut();
   }
   timeOut() {
@@ -15,10 +15,10 @@ class GeneratedDivConfig {
     }, (comulativeDelay += this.delay));
   }
   updateDiv(index, height, bgColor) {
-    let divs = this.generateDivs.divs;
+    let divs = this.divGenerator.divs;
     divs[index].style.height = height + '%';
     divs[index].style.backgroundColor = bgColor;
   }
 }
 
-export default GeneratedDivConfig;
+export default DivConfig;

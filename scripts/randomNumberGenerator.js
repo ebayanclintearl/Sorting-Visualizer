@@ -1,4 +1,4 @@
-class generateRandNums {
+class RandomNumbers {
   constructor() {
     this.numbers = [];
     this.size = 0;
@@ -10,9 +10,9 @@ class generateRandNums {
         this.numbers.push(randomNums);
     }
   }
-  reset() {
+  clear() {
     this.numbers = [];
   }
 }
 
-export default generateRandNums;
+export default RandomNumbers;

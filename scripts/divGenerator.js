@@ -1,4 +1,4 @@
-class GenerateDiv {
+class DivGenerator {
   constructor() {
     this.quantity = this.quantity;
     this.randNums = this.randNums;
@@ -6,17 +6,21 @@ class GenerateDiv {
     this.divs = [];
     this.divHeights = [];
   }
-  run() {
+  start() {
     for (let i = 0; i < this.quantity; i++) {
-      this.divs.push(document.createElement('div'));
+      this.divs[i] = document.createElement('div');
       this.divs[i].style.height = `${this.randNums[i]}%`;
-      this.divHeights.push(this.randNums[i]);
+      this.divHeights[i] = this.randNums[i];
       this.container.appendChild(this.divs[i]);
+
+      this.divs.forEach((div) => {
+        div.style.backgroundColor = '#00ffff';
+      });
     }
   }
-  reset() {
+  clear() {
     this.container.innerHTML = '';
   }
 }
 
-export default GenerateDiv;
+export default DivGenerator;

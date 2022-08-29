@@ -1,57 +1,60 @@
-import GeneratedDivConfig from './generatedDivConfig.js';
-import { generateDivs } from './main.js';
-function bubbleSort() {
-  let heightArr = generateDivs.divHeights;
+import DivConfig from './divConfig.js';
 
-  for (let i = 0; i < heightArr.length - 1; i++) {
-    for (var j = 0; j < heightArr.length - i - 1; j++) {
-      new GeneratedDivConfig({
-        index: j,
-        height: heightArr[j],
-        color: 'yellow',
-      });
-      if (heightArr[j] > heightArr[j + 1]) {
-        new GeneratedDivConfig({
+class BubbleSort {
+  constructor({ divGeneratorRef }) {
+    this.arr = divGeneratorRef.divHeights;
+  }
+  start() {
+    for (let i = 0; i < this.arr.length - 1; i++) {
+      for (var j = 0; j < this.arr.length - i - 1; j++) {
+        new DivConfig({
           index: j,
-          height: heightArr[j],
-          color: 'red',
+          height: this.arr[j],
+          color: 'yellow',
         });
-        new GeneratedDivConfig({
-          index: j + 1,
-          height: heightArr[j + 1],
-          color: 'red',
-        });
-        let tmp = heightArr[j];
-        heightArr[j] = heightArr[j + 1];
-        heightArr[j + 1] = tmp;
-        new GeneratedDivConfig({
+        if (this.arr[j] > this.arr[j + 1]) {
+          new DivConfig({
+            index: j,
+            height: this.arr[j],
+            color: 'red',
+          });
+          new DivConfig({
+            index: j + 1,
+            height: this.arr[j + 1],
+            color: 'red',
+          });
+          let tmp = this.arr[j];
+          this.arr[j] = this.arr[j + 1];
+          this.arr[j + 1] = tmp;
+          new DivConfig({
+            index: j,
+            height: this.arr[j],
+            color: 'red',
+          });
+          new DivConfig({
+            index: j + 1,
+            height: this.arr[j + 1],
+            color: 'red',
+          });
+        }
+        new DivConfig({
           index: j,
-          height: heightArr[j],
-          color: 'red',
-        });
-        new GeneratedDivConfig({
-          index: j + 1,
-          height: heightArr[j + 1],
-          color: 'red',
+          height: this.arr[j],
+          color: 'blue',
         });
       }
-      new GeneratedDivConfig({
+      new DivConfig({
         index: j,
-        height: heightArr[j],
-        color: 'blue',
+        height: this.arr[j],
+        color: 'green',
       });
     }
-    new GeneratedDivConfig({
-      index: j,
-      height: heightArr[j],
+    new DivConfig({
+      index: 0,
+      height: this.arr[0],
       color: 'green',
     });
   }
-  new GeneratedDivConfig({
-    index: 0,
-    height: heightArr[0],
-    color: 'green',
-  });
 }
 
-export default bubbleSort;
+export default BubbleSort;

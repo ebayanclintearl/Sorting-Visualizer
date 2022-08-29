@@ -1,29 +1,34 @@
-import GenerateDiv from './generateDiv.js';
-import generateRandNums from './generateNumber.js';
-import bubbleSort from './bubbleSort.js';
+import DivGenerator from './divGenerator.js';
+import DivConfig from './divConfig.js';
+import RandomNumbers from './randomNumberGenerator.js';
+import BubbleSort from './bubbleSort.js';
 
-const sliderRange = document.getElementById('myRange');
+const sliderRange = document.querySelector('#myRange');
 sliderRange.addEventListener('input', () => {
   renderDivs();
 });
 
 const divContainer = document.querySelector('.container');
-const randNumbers = new generateRandNums();
-export const generateDivs = new GenerateDiv();
+const randNumbers = new RandomNumbers();
+export const divGenerator = new DivGenerator();
+
 const renderDivs = () => {
-  const rangeValue = document.getElementById('myRange').value;
+  const rangeValue = document.querySelector('#myRange').value;
   randNumbers.size = rangeValue;
-  randNumbers.reset();
+  randNumbers.clear();
   randNumbers.start();
 
-  generateDivs.container = divContainer;
-  generateDivs.quantity = rangeValue;
-  generateDivs.randNums = randNumbers.numbers;
+  divGenerator.container = divContainer;
+  divGenerator.quantity = rangeValue;
+  divGenerator.randNums = randNumbers.numbers;
 
-  generateDivs.reset();
-  generateDivs.run();
+  divGenerator.clear();
+  divGenerator.start();
 };
 
 window.onload = renderDivs();
-
-bubbleSort();
+const bubbleSort = new BubbleSort({ divGeneratorRef: divGenerator });
+const btnStart = document.querySelector('.btn.start');
+btnStart.addEventListener('click', () => {
+  bubbleSort.start();
+});
