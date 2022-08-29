@@ -1,14 +1,17 @@
 class GenerateDiv {
-  constructor({ container, quantity, randNums }) {
-    this.quantity = quantity;
-    this.randNums = randNums;
-    this.container = container;
+  constructor() {
+    this.quantity = this.quantity;
+    this.randNums = this.randNums;
+    this.container = this.container;
+    this.divs = [];
+    this.divHeights = [];
   }
   run() {
     for (let i = 0; i < this.quantity; i++) {
-      const div = document.createElement('div');
-      div.style.height = `${this.randNums[i]}%`;
-      this.container.appendChild(div);
+      this.divs.push(document.createElement('div'));
+      this.divs[i].style.height = `${this.randNums[i]}%`;
+      this.divHeights.push(this.randNums[i]);
+      this.container.appendChild(this.divs[i]);
     }
   }
   reset() {

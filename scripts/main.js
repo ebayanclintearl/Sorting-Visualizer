@@ -1,26 +1,29 @@
 import GenerateDiv from './generateDiv.js';
 import generateRandNums from './generateNumber.js';
-import quantitybubbleSort from './bubbleSort.js';
+import bubbleSort from './bubbleSort.js';
 
 const sliderRange = document.getElementById('myRange');
-sliderRange.addEventListener('input', (e) => {
+sliderRange.addEventListener('input', () => {
   renderDivs();
 });
 
+const divContainer = document.querySelector('.container');
+const randNumbers = new generateRandNums();
+export const generateDivs = new GenerateDiv();
 const renderDivs = () => {
-  const divContainer = document.querySelector('.container');
   const rangeValue = document.getElementById('myRange').value;
+  randNumbers.size = rangeValue;
+  randNumbers.reset();
+  randNumbers.start();
 
-  generateRandNums.size = rangeValue;
-  generateRandNums.start();
+  generateDivs.container = divContainer;
+  generateDivs.quantity = rangeValue;
+  generateDivs.randNums = randNumbers.numbers;
 
-  const generateDiv = new GenerateDiv({
-    container: divContainer,
-    quantity: rangeValue,
-    randNums: generateRandNums.numbers,
-  });
-  generateDiv.reset();
-  generateDiv.run();
+  generateDivs.reset();
+  generateDivs.run();
 };
 
 window.onload = renderDivs();
+
+bubbleSort();
