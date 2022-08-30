@@ -1,24 +1,23 @@
-import { divContainer } from './main.js';
-let comulativeDelay = 0;
 class DivConfig {
+  static comulativeDelay = 0;
+  static divContainer = DivConfig.divContainer;
   constructor({ index, height, color }) {
     this.index = index;
     this.height = height;
     this.color = color;
     this.delay = 0.5;
-    this.timeOut();
-  }
-  timeOut() {
-    setTimeout(() => {
-      this.updateDiv();
-    }, (comulativeDelay += this.delay));
+    this.updateDiv();
   }
   updateDiv() {
-    divContainer.childNodes[this.index].style.height = this.height + '%';
-    divContainer.childNodes[this.index].style.backgroundColor = this.color;
+    setTimeout(() => {
+      DivConfig.divContainer.childNodes[this.index].style.height =
+        this.height + '%';
+      DivConfig.divContainer.childNodes[this.index].style.backgroundColor =
+        this.color;
+    }, (DivConfig.comulativeDelay += this.delay));
   }
   static resetDelay() {
-    comulativeDelay = 0;
+    DivConfig.comulativeDelay = 0;
   }
 }
 

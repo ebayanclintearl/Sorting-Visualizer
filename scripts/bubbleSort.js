@@ -1,5 +1,4 @@
 import DivConfig from './divConfig.js';
-
 class BubbleSort {
   constructor() {
     this.arr = this.arr;

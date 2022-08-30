@@ -8,11 +8,11 @@ sliderRange.addEventListener('input', () => {
   renderDivs();
 });
 
-export const divContainer = document.querySelector('.container');
-
+const divContainer = document.querySelector('.container');
 const randNumbers = new RandomNumbers();
 const divGenerator = new DivGenerator();
 const bubbleSort = new BubbleSort();
+DivConfig.divContainer = divContainer;
 
 const renderDivs = () => {
   const rangeValue = document.querySelector('#myRange').value;
