@@ -22,9 +22,7 @@ class BubbleSort {
             height: this.arr[j + 1],
             color: 'red',
           });
-          let tmp = this.arr[j];
-          this.arr[j] = this.arr[j + 1];
-          this.arr[j + 1] = tmp;
+          this.swap({ firstIndex: j, secondIndex: j + 1 });
           new BubbleSort.config({
             index: j,
             height: this.arr[j],
@@ -53,6 +51,11 @@ class BubbleSort {
       height: this.arr[0],
       color: 'green',
     });
+  }
+  swap({ firstIndex, secondIndex }) {
+    let tmp = this.arr[firstIndex];
+    this.arr[firstIndex] = this.arr[secondIndex];
+    this.arr[secondIndex] = tmp;
   }
 }
 
