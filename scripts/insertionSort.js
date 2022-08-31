@@ -4,7 +4,7 @@ class InsertionSort {
     this.arr = this.arr;
   }
   start() {
-    for (var i = 1; i < this.arr.length; i++) {
+    for (let i = 1; i < this.arr.length; i++) {
       new InsertionSort.config({
         index: i,
         height: this.arr[i],
@@ -59,17 +59,17 @@ class InsertionSort {
       }
       this.arr[j + 1] = current;
 
-      for (let t = 0; t < i; t++) {
+      for (let k = 0; k < i; k++) {
         new InsertionSort.config({
-          index: t,
-          height: this.arr[t],
+          index: k,
+          height: this.arr[k],
           color: 'green',
         });
       }
     }
     new InsertionSort.config({
-      index: i - 1,
-      height: this.arr[i - 1],
+      index: this.arr.length - 1,
+      height: this.arr[this.arr.length - 1],
       color: 'green',
     });
   }

@@ -4,7 +4,7 @@ class BubbleSort {
     this.arr = this.arr;
   }
   start() {
-    for (let i = 0; i < this.arr.length - 1; i++) {
+    for (let i = 0; i < this.arr.length; i++) {
       for (var j = 0; j < this.arr.length - i - 1; j++) {
         new BubbleSort.config({
           index: j,
@@ -41,16 +41,11 @@ class BubbleSort {
         });
       }
       new BubbleSort.config({
-        index: j,
-        height: this.arr[j],
+        index: this.arr.length - i - 1,
+        height: this.arr[this.arr.length - i - 1],
         color: 'green',
       });
     }
-    new BubbleSort.config({
-      index: 0,
-      height: this.arr[0],
-      color: 'green',
-    });
   }
   swap({ firstIndex, secondIndex }) {
     let tmp = this.arr[firstIndex];

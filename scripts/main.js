@@ -21,8 +21,8 @@ sliderRange.addEventListener('input', () => {
   renderDivs();
 });
 btnStart.addEventListener('click', () => {
-  //bubbleSort.start();
-  insertionSort.start();
+  bubbleSort.start();
+  //insertionSort.start();
   DivConfig.resetDelay();
 });
 
