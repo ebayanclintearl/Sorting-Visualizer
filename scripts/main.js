@@ -1,8 +1,8 @@
-import DivGenerator from './divGenerator.js';
-import DivConfig from './divConfig.js';
-import RandomNumbers from './randomNumberGenerator.js';
-import BubbleSort from './bubbleSort.js';
-import InsertionSort from './insertionSort.js';
+import DivGenerator from './Utils/divGenerator.js';
+import DivConfig from './Utils/divConfig.js';
+import RandomNumbers from './Utils/randomNumberGenerator.js';
+import BubbleSort from './Sorting Algorithms/bubbleSort.js';
+import InsertionSort from './Sorting Algorithms/insertionSort.js';
 
 const sliderRange = document.querySelector('#myRange');
 const divContainer = document.querySelector('.container');
@@ -12,17 +12,14 @@ const randNumbers = new RandomNumbers();
 const divGenerator = new DivGenerator();
 const bubbleSort = new BubbleSort();
 const insertionSort = new InsertionSort();
-
 DivConfig.container = divContainer;
-BubbleSort.config = DivConfig;
-InsertionSort.config = DivConfig;
 
 sliderRange.addEventListener('input', () => {
   renderDivs();
 });
 btnStart.addEventListener('click', () => {
-  bubbleSort.start();
-  //insertionSort.start();
+  //bubbleSort.start();
+  insertionSort.start();
   DivConfig.resetDelay();
 });
 

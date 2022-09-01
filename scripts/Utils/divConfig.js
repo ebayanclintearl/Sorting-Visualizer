@@ -6,12 +6,14 @@ class DivConfig {
     this.height = height;
     this.color = color;
     this.delay = 1;
-    this.updateDiv();
+    this.#updateDiv();
   }
-  updateDiv() {
+  #updateDiv() {
     setTimeout(() => {
       DivConfig.container.childNodes[this.index].style.height =
         this.height + '%';
+      DivConfig.container.childNodes[this.index].style.transition =
+        'height 0.2s ease-in';
       DivConfig.container.childNodes[this.index].style.backgroundColor =
         this.color;
     }, (DivConfig.comulativeDelay += this.delay));
