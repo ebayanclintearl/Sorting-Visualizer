@@ -1,7 +1,7 @@
 class DivGenerator {
   constructor() {
-    this.randNums = this.randNums;
-    this.container = this.container;
+    this.randNums = [];
+    this.container = {};
   }
   start() {
     for (let i = 0; i < this.randNums.length; i++) {

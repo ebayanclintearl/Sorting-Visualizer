@@ -111,7 +111,7 @@ table {
 }
 .main .container div {
   width: 50%;
-  background-color: #00ffff;
+  background-color: aqua;
   border: 1px solid white;
 }
 .main .slidecontainer {

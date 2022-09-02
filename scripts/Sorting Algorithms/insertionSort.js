@@ -1,7 +1,7 @@
 import DivConfig from '../Utils/divConfig.js';
 class InsertionSort {
   constructor() {
-    this.arr = this.arr;
+    this.arr = [];
   }
   start() {
     for (let i = 1; i < this.arr.length; i++) {

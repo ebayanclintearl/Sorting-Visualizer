@@ -1,15 +1,20 @@
 import DivConfig from '../Utils/divConfig.js';
 class BubbleSort {
   constructor() {
-    this.arr = this.arr;
+    this.arr = [];
   }
   start() {
     for (let i = 0; i < this.arr.length; i++) {
-      for (var j = 0; j < this.arr.length - i - 1; j++) {
+      for (let j = 0; j < this.arr.length - i - 1; j++) {
         new DivConfig({
           index: j,
           height: this.arr[j],
-          color: 'yellow',
+          color: 'orange',
+        });
+        new DivConfig({
+          index: j + 1,
+          height: this.arr[j + 1],
+          color: 'orange',
         });
         if (this.arr[j] > this.arr[j + 1]) {
           new DivConfig({
@@ -37,7 +42,7 @@ class BubbleSort {
         new DivConfig({
           index: j,
           height: this.arr[j],
-          color: 'blue',
+          color: 'aqua',
         });
       }
       new DivConfig({

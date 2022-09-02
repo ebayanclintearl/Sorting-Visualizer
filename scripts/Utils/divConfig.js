@@ -1,6 +1,6 @@
 class DivConfig {
   static comulativeDelay = 0;
-  static container = DivConfig.container;
+  static container = {};
   constructor({ index, height, color }) {
     this.index = index;
     this.height = height;
