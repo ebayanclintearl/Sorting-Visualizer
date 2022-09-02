@@ -4,6 +4,7 @@ import RandomNumbers from './Utils/randomNumberGenerator.js';
 import BubbleSort from './Sorting Algorithms/bubbleSort.js';
 import InsertionSort from './Sorting Algorithms/insertionSort.js';
 import SelectionSort from './Sorting Algorithms/selectionSort.js';
+import QuickSort from './Sorting Algorithms/quickSort.js';
 
 const sliderRange = document.querySelector('#myRange');
 const divContainer = document.querySelector('.container');
@@ -14,6 +15,7 @@ const divGenerator = new DivGenerator();
 const bubbleSort = new BubbleSort();
 const insertionSort = new InsertionSort();
 const selectionSort = new SelectionSort();
+const quickSort = new QuickSort();
 DivConfig.container = divContainer;
 divGenerator.container = divContainer;
 
@@ -22,8 +24,9 @@ sliderRange.addEventListener('input', () => {
 });
 btnStart.addEventListener('click', () => {
   //bubbleSort.start();
-  insertionSort.start();
-  //selectionSort.start();
+  // insertionSort.start();
+  // selectionSort.start();
+  quickSort.start();
   DivConfig.resetDelay();
 });
 
@@ -39,6 +42,7 @@ const renderDivs = () => {
   bubbleSort.arr = randNumbers.numbers;
   insertionSort.arr = randNumbers.numbers;
   selectionSort.arr = randNumbers.numbers;
+  quickSort.arr = randNumbers.numbers;
   DivConfig.resetDelay();
 };
 

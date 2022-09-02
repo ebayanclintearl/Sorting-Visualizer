@@ -48,7 +48,6 @@ class InsertionSort {
         color: 'green',
       });
     }
-    console.log(this.arr);
   }
 }
 
