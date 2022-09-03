@@ -5,7 +5,6 @@ class QuickSort {
   }
   start() {
     this.#quickSort({ qArr: this.arr, qLow: 0, qHigh: this.arr.length - 1 });
-    console.log(this.arr);
   }
   #partition({ arr, low, high }) {
     let pivot = arr[high];

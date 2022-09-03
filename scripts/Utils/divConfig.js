@@ -5,7 +5,7 @@ class DivConfig {
     this.index = index;
     this.height = height;
     this.color = color;
-    this.delay = 20;
+    this.delay = 10;
     this.#updateDiv();
   }
   #updateDiv() {
