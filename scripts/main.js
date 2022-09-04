@@ -6,6 +6,7 @@ import InsertionSort from './Sorting Algorithms/insertionSort.js';
 import SelectionSort from './Sorting Algorithms/selectionSort.js';
 import QuickSort from './Sorting Algorithms/quickSort.js';
 import MergeSort from './Sorting Algorithms/mergeSort.js';
+import HeapSort from './Sorting Algorithms/heapSort.js';
 
 const sliderRange = document.querySelector('#myRange');
 const divContainer = document.querySelector('.container');
@@ -18,6 +19,7 @@ const insertionSort = new InsertionSort();
 const selectionSort = new SelectionSort();
 const quickSort = new QuickSort();
 const mergeSort = new MergeSort();
+const heapSort = new HeapSort();
 DivConfig.container = divContainer;
 divGenerator.container = divContainer;
 
@@ -28,8 +30,9 @@ btnStart.addEventListener('click', () => {
   // bubbleSort.start();
   // insertionSort.start();
   // selectionSort.start();
-  // quickSort.start();
-  mergeSort.start();
+  //quickSort.start();
+  //mergeSort.start();
+  heapSort.start();
   DivConfig.resetDelay();
 });
 
@@ -47,6 +50,7 @@ const renderDivs = () => {
   selectionSort.arr = randNumbers.numbers;
   quickSort.arr = randNumbers.numbers;
   mergeSort.arr = randNumbers.numbers;
+  heapSort.arr = randNumbers.numbers;
   DivConfig.resetDelay();
 };
 
