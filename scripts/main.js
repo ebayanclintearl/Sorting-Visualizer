@@ -8,9 +8,11 @@ import QuickSort from './Sorting Algorithms/quickSort.js';
 import MergeSort from './Sorting Algorithms/mergeSort.js';
 import HeapSort from './Sorting Algorithms/heapSort.js';
 
-const sliderRange = document.querySelector('#myRange');
-const divContainer = document.querySelector('.container');
-const btnStart = document.querySelector('.btn.start');
+const sizeSlider = document.querySelector('#sizeSlider');
+const speedSlider = document.querySelector('#speedSlider');
+const divContainer = document.querySelector('.main .container');
+const resetButton = document.querySelector('.shuffle-btn');
+const sortButton = document.querySelector('.sort-btn');
 
 const randNumbers = new RandomNumbers();
 const divGenerator = new DivGenerator();
@@ -23,21 +25,28 @@ const heapSort = new HeapSort();
 DivConfig.container = divContainer;
 divGenerator.container = divContainer;
 
-sliderRange.addEventListener('input', () => {
+sizeSlider.addEventListener('input', () => {
   renderDivs();
 });
-btnStart.addEventListener('click', () => {
-  // bubbleSort.start();
+speedSlider.addEventListener('input', () => {
+  let value = parseInt(speedSlider.value);
+  DivConfig.delay = 100 / value;
+});
+resetButton.addEventListener('click', () => {
+  renderDivs();
+});
+sortButton.addEventListener('click', () => {
+  bubbleSort.start();
   // insertionSort.start();
   // selectionSort.start();
   //quickSort.start();
   //mergeSort.start();
-  heapSort.start();
+  //heapSort.start();
   DivConfig.resetDelay();
 });
 
 const renderDivs = () => {
-  randNumbers.size = sliderRange.value;
+  randNumbers.size = parseInt(sizeSlider.value);
   randNumbers.clear();
   randNumbers.start();
 

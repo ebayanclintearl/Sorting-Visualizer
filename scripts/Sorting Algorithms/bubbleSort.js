@@ -42,13 +42,13 @@ class BubbleSort {
         new DivConfig({
           index: j,
           height: this.arr[j],
-          color: 'aqua',
+          color: '#0083ff',
         });
       }
       new DivConfig({
         index: this.arr.length - i - 1,
         height: this.arr[this.arr.length - i - 1],
-        color: 'green',
+        color: '#3CCF4E',
       });
     }
   }

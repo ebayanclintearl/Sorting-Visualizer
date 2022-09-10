@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap");
 html,
 body,
 div,
@@ -97,32 +98,283 @@ table {
   border-spacing: 0;
 }
 
-.main {
+:root {
+  font-family: "Inter", sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  background-color: white;
+  top: 0;
+  position: fixed;
+  z-index: 999;
+}
+.navbar .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  padding: 0px 100px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.navbar .container .logo {
+  display: flex;
+  align-items: center;
+}
+.navbar .container .logo .logo-icon {
+  color: #0083ff;
+  background-image: url(/images/sort-icon.png);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  padding-bottom: 2px;
+}
+.navbar .container .logo .logo-text {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 900;
+  color: #081131;
+}
+.navbar .container .algo ul {
+  list-style-type: none;
+}
+.navbar .container .algo ul li {
+  display: inline-flex;
+}
+.navbar .container .algo ul li button {
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: 0.3s;
+  border: 1px solid transparent;
+  min-width: 100px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 2px 2px;
+  color: #3b4767;
+  background-color: transparent;
+  height: 40px;
+  font-family: inherit;
+}
+.navbar .container .algo ul li button:hover {
+  background-color: rgba(15, 139, 255, 0.2117647059);
+  color: #0083ff;
+}
+.navbar .container .algo ul li button:focus {
+  background-color: rgba(15, 139, 255, 0.2117647059);
+  color: #0083ff;
+}
+.navbar .container .btn .shuffle-btn {
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: 0.3s;
+  border: 1px solid transparent;
+  letter-spacing: 1px;
+  min-width: 80px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 9px;
+  color: red;
+  box-shadow: 0 0 0 1px red;
+  background-color: transparent;
+  height: 35px;
+  font-family: inherit;
+  margin-right: 5px;
+}
+.navbar .container .btn .shuffle-btn:hover {
+  background-color: red;
+  color: #fff;
+}
+.navbar .container .btn .shuffle-btn:focus {
+  background-color: red;
+  color: #fff;
+}
+.navbar .container .btn .sort-btn {
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: 0.3s;
+  border: 1px solid transparent;
+  letter-spacing: 1px;
+  min-width: 80px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 9px;
+  color: #0083ff;
+  box-shadow: 0 0 0 1px #0083ff;
+  background-color: transparent;
+  height: 35px;
+  font-family: inherit;
+}
+.navbar .container .btn .sort-btn:hover {
+  background-color: #0083ff;
+  color: #fff;
+}
+.navbar .container .btn .sort-btn:focus {
+  background-color: #0083ff;
+  color: #fff;
+}
+.navbar .container .small-device-icon {
+  display: none;
+}
+.navbar .container .small-device-icon .menu-icon {
+  display: none;
+  background-image: url(../images/menu-icon.png);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+.navbar .container .small-device-icon .close-icon {
+  display: none;
+  background-image: url(../images/close-icon.png);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+.main {
+  width: 100%;
 }
 .main .container {
   display: flex;
   align-items: flex-end;
-  margin-top: 10px;
-  width: 80%;
-  height: 500px;
-  border: 5px solid rgb(141, 112, 70);
+  height: calc(80vh - 76px);
+  margin: 66px 100px;
+  border: 2px solid #c9c9c9;
 }
 .main .container div {
   width: 50%;
-  background-color: aqua;
+  background-color: #0083ff;
   border: 1px solid white;
+  border-radius: 5px;
 }
-.main .slidecontainer {
-  width: 100%;
+
+.slidecontainer {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
 }
-.main .slidecontainer .slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  transition: opacity 0.2s;
+.slidecontainer .slider {
+  font-size: 14px;
+}
+
+@media (max-width: 1185px) {
+  .navbar .container {
+    padding: 0px 40px;
+  }
+  .navbar .container .logo {
+    display: flex;
+  }
+  .navbar .container .algo.unactive {
+    display: none;
+  }
+  .navbar .container .algo.active {
+    position: absolute;
+    top: 56px;
+    right: 0px;
+    width: 100%;
+  }
+  .navbar .container .algo.active ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar .container .algo.active ul li {
+    width: 100%;
+  }
+  .navbar .container .algo.active ul li button {
+    background-color: white;
+    color: #081131;
+    font-weight: 500;
+    border-radius: 0px;
+    width: 100%;
+    height: calc((100vh - 56px) / 6);
+  }
+  .navbar .container .algo.active ul li button:hover {
+    background-color: white;
+    color: #c9c9c9;
+  }
+  .navbar .container .algo.active ul li button:focus {
+    background-color: white;
+    color: #0083ff;
+  }
+  .navbar .container .btn {
+    position: fixed;
+    bottom: 20px;
+  }
+  .navbar .container .btn .shuffle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0083ff;
+    border: none;
+    box-shadow: none;
+    width: 60px;
+    height: 60px;
+    padding: 0px;
+    min-width: 0px;
+    margin: 0px;
+    margin-bottom: 5px;
+  }
+  .navbar .container .btn .shuffle-btn span {
+    display: none;
+  }
+  .navbar .container .btn .shuffle-btn .btn-icon {
+    background-image: url(../images/shuffle-icon.png);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+  }
+  .navbar .container .btn .sort-btn {
+    background-color: #0083ff;
+    border: none;
+    box-shadow: none;
+    width: 60px;
+    height: 60px;
+    padding: 0px;
+    min-width: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar .container .btn .sort-btn span {
+    display: none;
+  }
+  .navbar .container .btn .sort-btn .btn-icon {
+    background-image: url(../images/play-icon.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+  }
+  .navbar .container .small-device-icon {
+    display: block;
+  }
+  .navbar .container .small-device-icon .menu-icon {
+    display: block;
+    border: none;
+  }
+  .navbar .container .small-device-icon .close-icon.active {
+    display: block;
+    border: none;
+    background-color: red;
+  }
+  .main .container {
+    margin: 66px 40px;
+  }
 }/*# sourceMappingURL=index.css.map */

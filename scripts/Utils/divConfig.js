@@ -1,11 +1,11 @@
 class DivConfig {
   static comulativeDelay = 0;
   static container = {};
+  static delay = 1;
   constructor({ index, height, color }) {
     this.index = index;
     this.height = height;
     this.color = color;
-    this.delay = 10;
     this.#updateDiv();
   }
   #updateDiv() {
@@ -16,7 +16,7 @@ class DivConfig {
         'height 0.2s ease-in';
       DivConfig.container.childNodes[this.index].style.backgroundColor =
         this.color;
-    }, (DivConfig.comulativeDelay += this.delay));
+    }, (DivConfig.comulativeDelay += DivConfig.delay));
   }
   static resetDelay() {
     DivConfig.comulativeDelay = 0;

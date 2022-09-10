@@ -4,24 +4,70 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sorting Visualizer</title>
+    <link rel="icon" href="images/sort-icon.png" />
     <link rel="stylesheet" href="styles/index.css" />
     <script type="module" src="scripts/main.js"></script>
   </head>
   <body>
+    <div class="navbar">
+      <div class="container">
+        <div class="logo">
+          <span class="logo-icon"></span>
+          <a class="logo-text" href="#">Sorting Visualizer</a>
+        </div>
+        <div class="algo unactive">
+          <ul>
+            <li><button>Bubble</button></li>
+            <li><button>Insertion</button></li>
+            <li><button>Selection</button></li>
+            <li><button>Merge</button></li>
+            <li><button>Quick</button></li>
+            <li><button>Heap</button></li>
+          </ul>
+        </div>
+        <div class="btn">
+          <button class="shuffle-btn">
+            <span>Shuffle</span>
+            <div class="btn-icon"></div>
+          </button>
+          <button class="sort-btn">
+            <span>Sort!</span>
+            <div class="btn-icon"></div>
+          </button>
+        </div>
+        <div class="small-device-icon">
+          <span><button class="menu-icon"></button></span>
+          <span><button class="close-icon"></button></span>
+        </div>
+      </div>
+    </div>
     <div class="main">
       <div class="container"></div>
     </div>
     <div class="slidecontainer">
-      <input
-        type="range"
-        min="20"
-        max="100"
-        value="50"
-        class="slider"
-        id="myRange"
-      />
-      <button class="btn start">Start</button>
+      <label for="sizeSlider"
+        >size
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="50"
+          class="slider"
+          id="sizeSlider"
+        />
+      </label>
+      <label for="speedSlider"
+        >speed
+        <input
+          type="range"
+          min="1"
+          max="1000"
+          value="50"
+          class="slider"
+          id="speedSlider"
+        />
+      </label>
     </div>
   </body>
 </html>
