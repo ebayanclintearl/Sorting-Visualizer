@@ -14,7 +14,7 @@ $light-grey-color: #c9c9c9;
   background-color: white;
   top: 0;
   position: fixed;
-  z-index: 999;
+  z-index: 1;
   .container {
     display: flex;
     justify-content: space-between;
@@ -73,6 +73,68 @@ $light-grey-color: #c9c9c9;
             &:focus {
               background-color: $light-blue-transparent-color;
               color: $light-blue-color;
+            }
+          }
+        }
+      }
+    }
+
+    .dropdowns {
+      display: inline-flex;
+      .dropdown {
+        position: relative;
+        &:hover {
+          .dropbtn {
+            color: $light-blue-color;
+            span {
+              background-image: url(../images/drop_down-hover-icon.png);
+              background-repeat: no-repeat;
+              width: 24px;
+              height: 24px;
+            }
+          }
+          .dropdown-content {
+            display: block;
+          }
+        }
+        .dropbtn {
+          background-color: white;
+          color: $light-color;
+          padding: 16px;
+          font-family: inherit;
+          font-size: 14px;
+          font-weight: 700;
+          border: none;
+          display: flex;
+          align-items: center;
+          span {
+            background-image: url(../images/drop_down-icon.png);
+            background-repeat: no-repeat;
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .dropdown-content {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          background-color: white;
+          min-width: 200px;
+          border-radius: 5px;
+          box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+            rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+          z-index: 1;
+          button {
+            display: flex;
+            color: black;
+            background-color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            &:hover {
+              color: white;
+              background-color: $light-blue-color;
             }
           }
         }
@@ -178,16 +240,8 @@ $light-grey-color: #c9c9c9;
     }
   }
 }
-.slidecontainer {
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-  .slider {
-    font-size: 14px;
-  }
-}
 
-@media (max-width: 1185px) {
+@media (max-width: 1400px) {
   .navbar {
     .container {
       padding: 0px 40px;

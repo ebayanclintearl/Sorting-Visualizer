@@ -8,10 +8,8 @@ import QuickSort from './Sorting Algorithms/quickSort.js';
 import MergeSort from './Sorting Algorithms/mergeSort.js';
 import HeapSort from './Sorting Algorithms/heapSort.js';
 
-const sizeSlider = document.querySelector('#sizeSlider');
-const speedSlider = document.querySelector('#speedSlider');
 const divContainer = document.querySelector('.main .container');
-const resetButton = document.querySelector('.shuffle-btn');
+const shuffleButton = document.querySelector('.shuffle-btn');
 const sortButton = document.querySelector('.sort-btn');
 
 const randNumbers = new RandomNumbers();
@@ -25,14 +23,7 @@ const heapSort = new HeapSort();
 DivConfig.container = divContainer;
 divGenerator.container = divContainer;
 
-sizeSlider.addEventListener('input', () => {
-  renderDivs();
-});
-speedSlider.addEventListener('input', () => {
-  let value = parseInt(speedSlider.value);
-  DivConfig.delay = 100 / value;
-});
-resetButton.addEventListener('click', () => {
+shuffleButton.addEventListener('click', () => {
   renderDivs();
 });
 sortButton.addEventListener('click', () => {
@@ -45,8 +36,17 @@ sortButton.addEventListener('click', () => {
   DivConfig.resetDelay();
 });
 
+const size = {
+  small: 30,
+  medium: 70,
+  large: 100,
+};
+const speed = {
+  slow: 1000,
+  moderate: 50,
+  fast: 1,
+};
 const renderDivs = () => {
-  randNumbers.size = parseInt(sizeSlider.value);
   randNumbers.clear();
   randNumbers.start();
 
@@ -63,4 +63,35 @@ const renderDivs = () => {
   DivConfig.resetDelay();
 };
 
-window.onload = renderDivs();
+const runDefault = () => {
+  randNumbers.size = size.small;
+  renderDivs();
+};
+window.onload = runDefault();
+window.onclick = (e) => {
+  console.log(e.target.parentElement);
+  let textTarget = e.target.innerText.toLowerCase();
+  switch (textTarget) {
+    case 'small':
+      randNumbers.size = size.small;
+      renderDivs();
+      break;
+    case 'medium':
+      randNumbers.size = size.medium;
+      renderDivs();
+      break;
+    case 'large':
+      randNumbers.size = size.large;
+      renderDivs();
+      break;
+    case 'slow':
+      DivConfig.delay = speed.slow;
+      break;
+    case 'moderate':
+      DivConfig.delay = speed.moderate;
+      break;
+    case 'fast':
+      DivConfig.delay = speed.fast;
+      break;
+  }
+};
