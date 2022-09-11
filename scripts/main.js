@@ -11,6 +11,8 @@ import HeapSort from './Sorting Algorithms/heapSort.js';
 const divContainer = document.querySelector('.main .container');
 const shuffleButton = document.querySelector('.shuffle-btn');
 const sortButton = document.querySelector('.sort-btn');
+const sizeBtnTitle = document.querySelector('#size-btn-title');
+const speedBtnTitle = document.querySelector('#speed-btn-title');
 
 const randNumbers = new RandomNumbers();
 const divGenerator = new DivGenerator();
@@ -23,29 +25,6 @@ const heapSort = new HeapSort();
 DivConfig.container = divContainer;
 divGenerator.container = divContainer;
 
-shuffleButton.addEventListener('click', () => {
-  renderDivs();
-});
-sortButton.addEventListener('click', () => {
-  bubbleSort.start();
-  // insertionSort.start();
-  // selectionSort.start();
-  //quickSort.start();
-  //mergeSort.start();
-  //heapSort.start();
-  DivConfig.resetDelay();
-});
-
-const size = {
-  small: 30,
-  medium: 70,
-  large: 100,
-};
-const speed = {
-  slow: 1000,
-  moderate: 50,
-  fast: 1,
-};
 const renderDivs = () => {
   randNumbers.clear();
   randNumbers.start();
@@ -63,35 +42,84 @@ const renderDivs = () => {
   DivConfig.resetDelay();
 };
 
+const size = {
+  small: 30,
+  medium: 70,
+  large: 100,
+  smallText: 'SIZE: small',
+  mediumText: 'SIZE: medium',
+  largeText: 'SIZE: large',
+};
+const speed = {
+  slow: 1000,
+  moderate: 50,
+  fast: 1,
+  slowText: 'SPEED: slow',
+  moderateText: 'SPEED: moderate',
+  fastText: 'SPEED: fast',
+};
+
 const runDefault = () => {
-  randNumbers.size = size.small;
+  randNumbers.size = size.medium;
+  DivConfig.delay = speed.moderate;
   renderDivs();
 };
+
 window.onload = runDefault();
+
+const SortingAlgo = {
+  isBubbleClicked: false,
+  isInsertionClicked: false,
+  isSelectionClicked: false,
+  isMergeClicked: false,
+  isQuickClicked: false,
+  isHeapClicked: false,
+};
+
 window.onclick = (e) => {
-  console.log(e.target.parentElement);
   let textTarget = e.target.innerText.toLowerCase();
+  console.log(e.target);
   switch (textTarget) {
     case 'small':
       randNumbers.size = size.small;
       renderDivs();
+      sizeBtnTitle.innerText = size.smallText;
       break;
     case 'medium':
       randNumbers.size = size.medium;
       renderDivs();
+      sizeBtnTitle.innerText = size.mediumText;
       break;
     case 'large':
       randNumbers.size = size.large;
       renderDivs();
+      sizeBtnTitle.innerText = size.largeText;
       break;
     case 'slow':
       DivConfig.delay = speed.slow;
+      speedBtnTitle.innerText = speed.slowText;
       break;
     case 'moderate':
       DivConfig.delay = speed.moderate;
+      speedBtnTitle.innerText = speed.moderateText;
       break;
     case 'fast':
       DivConfig.delay = speed.fast;
+      speedBtnTitle.innerText = speed.fastText;
       break;
+    default:
+      return;
   }
 };
+shuffleButton.addEventListener('click', () => {
+  renderDivs();
+});
+sortButton.addEventListener('click', () => {
+  bubbleSort.start();
+  // insertionSort.start();
+  // selectionSort.start();
+  // quickSort.start();
+  //mergeSort.start();
+  //heapSort.start();
+  DivConfig.resetDelay();
+});
