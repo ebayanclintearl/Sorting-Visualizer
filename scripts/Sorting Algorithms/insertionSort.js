@@ -1,3 +1,4 @@
+import { divColors } from '../Utils/Configs.js';
 import DivConfig from '../Utils/divConfig.js';
 class InsertionSort {
   constructor() {
@@ -10,29 +11,29 @@ class InsertionSort {
       new DivConfig({
         index: i,
         height: current,
-        color: 'orange',
+        color: divColors.onProcess,
       });
       new DivConfig({
         index: i,
         height: current,
-        color: 'red',
+        color: divColors.incorrect,
       });
       new DivConfig({
         index: j,
         height: this.arr[j],
-        color: 'green',
+        color: divColors.correct,
       });
       while (j >= 0 && this.arr[j] > current) {
         this.arr[j + 1] = this.arr[j];
         new DivConfig({
           index: j + 1,
           height: this.arr[j + 1],
-          color: 'orange',
+          color: divColors.onProcess,
         });
         new DivConfig({
           index: j + 1,
           height: this.arr[j + 1],
-          color: 'green',
+          color: divColors.correct,
         });
         j--;
       }
@@ -40,12 +41,12 @@ class InsertionSort {
       new DivConfig({
         index: j + 1,
         height: this.arr[j + 1],
-        color: 'red',
+        color: divColors.incorrect,
       });
       new DivConfig({
         index: j + 1,
         height: this.arr[j + 1],
-        color: 'green',
+        color: divColors.correct,
       });
     }
   }

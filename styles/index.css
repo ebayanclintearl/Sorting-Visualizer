@@ -165,7 +165,7 @@ table {
   background-color: rgba(15, 139, 255, 0.2117647059);
   color: #0083ff;
 }
-.navbar .container .algo ul li button:focus {
+.navbar .container .algo ul li button.active {
   background-color: rgba(15, 139, 255, 0.2117647059);
   color: #0083ff;
 }

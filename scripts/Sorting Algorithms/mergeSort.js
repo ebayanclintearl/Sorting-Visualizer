@@ -1,3 +1,4 @@
+import { divColors } from '../Utils/Configs.js';
 import DivConfig from '../Utils/divConfig.js';
 
 class MergeSort {
@@ -33,7 +34,7 @@ class MergeSort {
     new DivConfig({
       index: mid,
       height: this.arr[mid],
-      color: 'orange',
+      color: divColors.onProcess,
     });
     while (i < n1 && j < n2) {
       if (leftArray[i] <= rightArray[j]) {
@@ -41,12 +42,12 @@ class MergeSort {
         new DivConfig({
           index: k,
           height: this.arr[k],
-          color: 'red',
+          color: divColors.incorrect,
         });
         new DivConfig({
           index: k,
           height: this.arr[k],
-          color: 'red',
+          color: divColors.incorrect,
         });
         i++;
       } else {
@@ -54,24 +55,24 @@ class MergeSort {
         new DivConfig({
           index: k,
           height: this.arr[k],
-          color: 'red',
+          color: divColors.incorrect,
         });
         new DivConfig({
           index: k,
           height: this.arr[k],
-          color: 'red',
+          color: divColors.incorrect,
         });
         j++;
       }
       new DivConfig({
         index: k,
         height: this.arr[k],
-        color: 'red',
+        color: divColors.incorrect,
       });
       new DivConfig({
         index: k,
         height: this.arr[k],
-        color: 'green',
+        color: divColors.correct,
       });
       k++;
     }
@@ -81,7 +82,7 @@ class MergeSort {
       new DivConfig({
         index: k,
         height: this.arr[k],
-        color: 'green',
+        color: divColors.correct,
       });
       i++;
       k++;
@@ -91,7 +92,7 @@ class MergeSort {
       new DivConfig({
         index: k,
         height: this.arr[k],
-        color: 'green',
+        color: divColors.correct,
       });
       j++;
       k++;

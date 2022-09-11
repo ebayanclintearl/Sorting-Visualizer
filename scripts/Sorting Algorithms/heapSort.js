@@ -1,3 +1,4 @@
+import { divColors } from '../Utils/Configs.js';
 import DivConfig from '../Utils/divConfig.js';
 class HeapSort {
   constructor() {
@@ -5,7 +6,6 @@ class HeapSort {
   }
   start() {
     this.#sort();
-    console.log(this.arr);
   }
   #sort() {
     var N = this.arr.length;
@@ -20,18 +20,18 @@ class HeapSort {
       new DivConfig({
         index: i,
         height: this.arr[i],
-        color: 'green',
+        color: divColors.correct,
       });
       new DivConfig({
         index: i,
         height: this.arr[i],
-        color: 'yellow',
+        color: divColors.onProcess,
       });
       this.#heapify(i, 0);
       new DivConfig({
         index: i,
         height: this.arr[i],
-        color: 'green',
+        color: divColors.correct,
       });
     }
   }
@@ -50,12 +50,12 @@ class HeapSort {
       new DivConfig({
         index: i,
         height: this.arr[i],
-        color: 'red',
+        color: divColors.incorrect,
       });
       new DivConfig({
         index: largest,
         height: this.arr[largest],
-        color: 'red',
+        color: divColors.incorrect,
       });
 
       let swap = this.arr[i];
@@ -65,22 +65,22 @@ class HeapSort {
       new DivConfig({
         index: i,
         height: this.arr[i],
-        color: 'red',
+        color: divColors.incorrect,
       });
       new DivConfig({
         index: largest,
         height: this.arr[largest],
-        color: 'red',
+        color: divColors.incorrect,
       });
       new DivConfig({
         index: i,
         height: this.arr[i],
-        color: 'aqua',
+        color: divColors.default,
       });
       new DivConfig({
         index: largest,
         height: this.arr[largest],
-        color: 'aqua',
+        color: divColors.default,
       });
 
       this.#heapify(N, largest);

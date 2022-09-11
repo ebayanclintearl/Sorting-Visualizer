@@ -1,3 +1,4 @@
+import { divColors } from '../Utils/Configs.js';
 import DivConfig from '../Utils/divConfig.js';
 class SelectionSort {
   constructor() {
@@ -9,30 +10,30 @@ class SelectionSort {
       new DivConfig({
         index: i,
         height: this.arr[i],
-        color: 'red',
+        color: divColors.incorrect,
       });
       for (let j = i + 1; j < this.arr.length; j++) {
         new DivConfig({
           index: j,
           height: this.arr[j],
-          color: 'orange',
+          color: divColors.onProcess,
         });
         new DivConfig({
           index: j,
           height: this.arr[j],
-          color: 'aqua',
+          color: divColors.default,
         });
         if (this.arr[j] < this.arr[min]) {
           new DivConfig({
             index: min,
             height: this.arr[min],
-            color: 'aqua',
+            color: divColors.default,
           });
           min = j;
           new DivConfig({
             index: j,
             height: this.arr[j],
-            color: 'red',
+            color: divColors.incorrect,
           });
         }
       }
@@ -40,34 +41,34 @@ class SelectionSort {
         new DivConfig({
           index: i,
           height: this.arr[i],
-          color: 'red',
+          color: divColors.incorrect,
         });
         new DivConfig({
           index: min,
           height: this.arr[min],
-          color: 'red',
+          color: divColors.incorrect,
         });
         this.#swap({ firstIndex: i, secondIndex: min });
         new DivConfig({
           index: i,
           height: this.arr[i],
-          color: 'red',
+          color: divColors.incorrect,
         });
         new DivConfig({
           index: min,
           height: this.arr[min],
-          color: 'red',
+          color: divColors.incorrect,
         });
         new DivConfig({
           index: min,
           height: this.arr[min],
-          color: 'aqua',
+          color: divColors.default,
         });
       }
       new DivConfig({
         index: i,
         height: this.arr[i],
-        color: 'green',
+        color: divColors.correct,
       });
     }
   }

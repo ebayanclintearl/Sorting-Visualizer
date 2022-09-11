@@ -70,7 +70,7 @@ $light-grey-color: #c9c9c9;
               background-color: $light-blue-transparent-color;
               color: $light-blue-color;
             }
-            &:focus {
+            &.active {
               background-color: $light-blue-transparent-color;
               color: $light-blue-color;
             }

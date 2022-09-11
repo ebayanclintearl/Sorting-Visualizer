@@ -1,3 +1,4 @@
+import { divColors } from '../Utils/Configs.js';
 import DivConfig from '../Utils/divConfig.js';
 class BubbleSort {
   constructor() {
@@ -9,46 +10,46 @@ class BubbleSort {
         new DivConfig({
           index: j,
           height: this.arr[j],
-          color: 'orange',
+          color: divColors.onProcess,
         });
         new DivConfig({
           index: j + 1,
           height: this.arr[j + 1],
-          color: 'orange',
+          color: divColors.onProcess,
         });
         if (this.arr[j] > this.arr[j + 1]) {
           new DivConfig({
             index: j,
             height: this.arr[j],
-            color: 'red',
+            color: divColors.incorrect,
           });
           new DivConfig({
             index: j + 1,
             height: this.arr[j + 1],
-            color: 'red',
+            color: divColors.incorrect,
           });
           this.#swap({ firstIndex: j, secondIndex: j + 1 });
           new DivConfig({
             index: j,
             height: this.arr[j],
-            color: 'red',
+            color: divColors.incorrect,
           });
           new DivConfig({
             index: j + 1,
             height: this.arr[j + 1],
-            color: 'red',
+            color: divColors.incorrect,
           });
         }
         new DivConfig({
           index: j,
           height: this.arr[j],
-          color: '#0083ff',
+          color: divColors.default,
         });
       }
       new DivConfig({
         index: this.arr.length - i - 1,
         height: this.arr[this.arr.length - i - 1],
-        color: '#3CCF4E',
+        color: divColors.correct,
       });
     }
   }
