@@ -67,14 +67,7 @@ const runDefault = () => {
 
 window.onload = runDefault();
 
-const SortingAlgo = {
-  isBubbleClicked: false,
-  isInsertionClicked: false,
-  isSelectionClicked: false,
-  isMergeClicked: false,
-  isQuickClicked: false,
-  isHeapClicked: false,
-};
+const sortingAlgo = [];
 
 window.onclick = (e) => {
   let textTarget = e.target.innerText.toLowerCase();
@@ -107,6 +100,24 @@ window.onclick = (e) => {
       DivConfig.delay = speed.fast;
       speedBtnTitle.innerText = speed.fastText;
       break;
+    case 'bubble':
+      sortingAlgo[0] = bubbleSort;
+      break;
+    case 'insertion':
+      sortingAlgo[0] = insertionSort;
+      break;
+    case 'selection':
+      sortingAlgo[0] = selectionSort;
+      break;
+    case 'quick':
+      sortingAlgo[0] = quickSort;
+      break;
+    case 'merge':
+      sortingAlgo[0] = mergeSort;
+      break;
+    case 'heap':
+      sortingAlgo[0] = heapSort;
+      break;
     default:
       return;
   }
@@ -115,11 +126,7 @@ shuffleButton.addEventListener('click', () => {
   renderDivs();
 });
 sortButton.addEventListener('click', () => {
-  bubbleSort.start();
-  // insertionSort.start();
-  // selectionSort.start();
-  // quickSort.start();
-  //mergeSort.start();
-  //heapSort.start();
+  if (sortingAlgo.length !== 0) sortingAlgo[0].start();
+  if (sortingAlgo.length === 0) alert('Pick a Sorting Algorithm!');
   DivConfig.resetDelay();
 });

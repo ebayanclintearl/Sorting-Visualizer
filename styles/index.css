@@ -323,15 +323,6 @@ table {
   border-radius: 5px;
 }
 
-.slidecontainer {
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-}
-.slidecontainer .slider {
-  font-size: 14px;
-}
-
 @media (max-width: 1400px) {
   .navbar .container {
     padding: 0px 40px;
