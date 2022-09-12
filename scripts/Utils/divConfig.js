@@ -18,9 +18,6 @@ class DivConfig {
         this.color;
     }, (DivConfig.comulativeDelay += DivConfig.delay));
   }
-  static resetDelay() {
-    DivConfig.comulativeDelay = 0;
-  }
 }
 
 export default DivConfig;

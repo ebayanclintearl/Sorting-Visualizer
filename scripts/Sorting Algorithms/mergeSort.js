@@ -1,5 +1,6 @@
 import { divColors } from '../Utils/Configs.js';
 import DivConfig from '../Utils/divConfig.js';
+import { enableButtons } from '../Utils/helperBtns.js';
 
 class MergeSort {
   constructor() {
@@ -7,6 +8,7 @@ class MergeSort {
   }
   start() {
     this.#mergeSort(this.arr, 0, this.arr.length - 1);
+    enableButtons();
   }
   #mergeSort(arr, beg, end) {
     if (beg < end) {

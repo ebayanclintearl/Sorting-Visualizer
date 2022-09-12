@@ -28,7 +28,7 @@ $light-grey-color: #c9c9c9;
       align-items: center;
       .logo-icon {
         color: $light-blue-color;
-        background-image: url(/images/sort-icon.png);
+        background-image: url(../images/sort-icon.png);
         background-repeat: no-repeat;
         width: 24px;
         height: 24px;
@@ -172,6 +172,11 @@ $light-grey-color: #c9c9c9;
           background-color: red;
           color: #fff;
         }
+        &.disabled {
+          background-color: transparent;
+          box-shadow: 0 0 0 1px $light-grey-color;
+          color: $light-grey-color;
+        }
       }
       .sort-btn {
         outline: none;
@@ -207,19 +212,19 @@ $light-grey-color: #c9c9c9;
     }
     .small-device-icon {
       display: none;
-      .menu-icon {
+      .menu-btn {
         display: none;
         background-image: url(../images/menu-icon.png);
         background-repeat: no-repeat;
         width: 24px;
         height: 24px;
-      }
-      .close-icon {
-        display: none;
-        background-image: url(../images/close-icon.png);
-        background-repeat: no-repeat;
-        width: 24px;
-        height: 24px;
+        &.active {
+          display: none;
+          background-image: url(../images/close-icon.png);
+          background-repeat: no-repeat;
+          width: 24px;
+          height: 24px;
+        }
       }
     }
   }
@@ -249,10 +254,9 @@ $light-grey-color: #c9c9c9;
         display: flex;
       }
       .algo {
-        &.unactive {
-          display: none;
-        }
+        display: none;
         &.active {
+          display: block;
           position: absolute;
           top: 56px;
           right: 0px;
@@ -308,6 +312,11 @@ $light-grey-color: #c9c9c9;
             width: 50px;
             height: 50px;
           }
+          &.disabled {
+            background-color: $light-grey-color;
+            box-shadow: none;
+            color: none;
+          }
         }
         .sort-btn {
           background-color: $light-blue-color;
@@ -333,15 +342,12 @@ $light-grey-color: #c9c9c9;
       }
       .small-device-icon {
         display: block;
-        .menu-icon {
+        .menu-btn {
           display: block;
           border: none;
-        }
-        .close-icon {
           &.active {
             display: block;
             border: none;
-            background-color: red;
           }
         }
       }

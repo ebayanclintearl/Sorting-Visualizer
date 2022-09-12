@@ -9,13 +9,18 @@ import QuickSort from './Sorting Algorithms/quickSort.js';
 import MergeSort from './Sorting Algorithms/mergeSort.js';
 import HeapSort from './Sorting Algorithms/heapSort.js';
 import { size, speed } from './Utils/Configs.js';
+import { disabledButtons } from './Utils/helperBtns.js';
 
 const divContainer = document.querySelector('.main .container');
 const shuffleButton = document.querySelector('.shuffle-btn');
 const sortButton = document.querySelector('.sort-btn');
 const sizeBtnTitle = document.querySelector('#size-btn-title');
+const sizeBtns = document.querySelectorAll('#size-btns button');
 const speedBtnTitle = document.querySelector('#speed-btn-title');
+const speedBtns = document.querySelectorAll('#speed-btns button');
 const algoBtns = document.querySelectorAll('.algo ul li button');
+const algo = document.querySelector('.algo.unactive');
+const menuBtn = document.querySelector('.menu-btn');
 
 const randNumbers = new RandomNumbers();
 const divGenerator = new DivGenerator();
@@ -43,7 +48,7 @@ const renderDivs = () => {
   quickSort.arr = randNumbers.numbers;
   mergeSort.arr = randNumbers.numbers;
   heapSort.arr = randNumbers.numbers;
-  DivConfig.resetDelay();
+  DivConfig.comulativeDelay = 0;
 };
 
 const runDefault = () => {
@@ -54,47 +59,62 @@ const runDefault = () => {
 
 window.onload = runDefault();
 
-window.onclick = (e) => {
-  let textTarget = e.target.innerText.toLowerCase();
-  switch (textTarget) {
-    case 'small':
-      randNumbers.size = size.small;
-      renderDivs();
-      sizeBtnTitle.innerText = size.smallText;
-      break;
-    case 'medium':
-      randNumbers.size = size.medium;
-      renderDivs();
-      sizeBtnTitle.innerText = size.mediumText;
-      break;
-    case 'large':
-      randNumbers.size = size.large;
-      renderDivs();
-      sizeBtnTitle.innerText = size.largeText;
-      break;
-    case 'slow':
-      DivConfig.delay = speed.slow;
-      speedBtnTitle.innerText = speed.slowText;
-      break;
-    case 'moderate':
-      DivConfig.delay = speed.moderate;
-      speedBtnTitle.innerText = speed.moderateText;
-      break;
-    case 'fast':
-      DivConfig.delay = speed.fast;
-      speedBtnTitle.innerText = speed.fastText;
-      break;
-    default:
-      return;
-  }
-};
+sizeBtns.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    let textTarget = e.target.innerText.toLowerCase();
+    switch (textTarget) {
+      case 'small':
+        randNumbers.size = size.small;
+        sizeBtnTitle.innerText = size.smallText;
+        renderDivs();
+        break;
+      case 'medium':
+        randNumbers.size = size.medium;
+        sizeBtnTitle.innerText = size.mediumText;
+        renderDivs();
+        break;
+      case 'large':
+        randNumbers.size = size.large;
+        sizeBtnTitle.innerText = size.largeText;
+        renderDivs();
+        break;
+      default:
+        return;
+    }
+  });
+});
+
+speedBtns.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    let textTarget = e.target.innerText.toLowerCase();
+    switch (textTarget) {
+      case 'slow':
+        DivConfig.delay = speed.slow;
+        speedBtnTitle.innerText = speed.slowText;
+        break;
+      case 'moderate':
+        DivConfig.delay = speed.moderate;
+        speedBtnTitle.innerText = speed.moderateText;
+        break;
+      case 'fast':
+        DivConfig.delay = speed.fast;
+        speedBtnTitle.innerText = speed.fastText;
+        break;
+      default:
+        return;
+    }
+  });
+});
+
 shuffleButton.addEventListener('click', () => {
   renderDivs();
 });
 sortButton.addEventListener('click', () => {
   sortType.start();
-  DivConfig.resetDelay();
+  DivConfig.comulativeDelay = 0;
+  if (!sortType.isObjEmpty()) disabledButtons();
 });
+
 algoBtns.forEach((button) => {
   button.addEventListener('click', () => {
     algoBtns.forEach((button) => button.classList.remove('active'));
@@ -107,4 +127,9 @@ algoBtns.forEach((button) => {
     if (algoText === 'quick') sortType.type = quickSort;
     if (algoText === 'heap') sortType.type = heapSort;
   });
+});
+
+menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('active');
+  algo.classList.toggle('active');
 });

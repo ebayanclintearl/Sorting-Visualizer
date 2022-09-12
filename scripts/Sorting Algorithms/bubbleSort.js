@@ -1,5 +1,6 @@
 import { divColors } from '../Utils/Configs.js';
 import DivConfig from '../Utils/divConfig.js';
+import { enableButtons } from '../Utils/helperBtns.js';
 class BubbleSort {
   constructor() {
     this.arr = [];
@@ -52,6 +53,7 @@ class BubbleSort {
         color: divColors.correct,
       });
     }
+    enableButtons();
   }
   #swap({ firstIndex, secondIndex }) {
     let tmp = this.arr[firstIndex];

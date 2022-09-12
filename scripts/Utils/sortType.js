@@ -3,14 +3,14 @@ class SortType {
     this.type = {};
   }
   start() {
-    if (this.#isObjEmpty(this.type)) {
+    if (this.isObjEmpty()) {
       alert('Pick a Sorting Algorithm!');
       return;
     }
     this.type.start();
   }
-  #isObjEmpty(obj) {
-    return Object.keys(obj).length === 0;
+  isObjEmpty() {
+    return Object.keys(this.type).length === 0;
   }
 }
 

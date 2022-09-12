@@ -1,5 +1,6 @@
 import { divColors } from '../Utils/Configs.js';
 import DivConfig from '../Utils/divConfig.js';
+import { enableButtons } from '../Utils/helperBtns.js';
 class InsertionSort {
   constructor() {
     this.arr = [];
@@ -49,6 +50,7 @@ class InsertionSort {
         color: divColors.correct,
       });
     }
+    enableButtons();
   }
 }
 

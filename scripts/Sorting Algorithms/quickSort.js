@@ -1,11 +1,13 @@
 import { divColors } from '../Utils/Configs.js';
 import DivConfig from '../Utils/divConfig.js';
+import { enableButtons } from '../Utils/helperBtns.js';
 class QuickSort {
   constructor() {
     this.arr = [];
   }
   start() {
     this.#quickSort({ qArr: this.arr, qLow: 0, qHigh: this.arr.length - 1 });
+    enableButtons();
   }
   #partition({ arr, low, high }) {
     let pivot = arr[high];

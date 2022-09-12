@@ -1,11 +1,13 @@
 import { divColors } from '../Utils/Configs.js';
 import DivConfig from '../Utils/divConfig.js';
+import { enableButtons } from '../Utils/helperBtns.js';
 class HeapSort {
   constructor() {
     this.arr = [];
   }
   start() {
     this.#sort();
+    enableButtons();
   }
   #sort() {
     var N = this.arr.length;

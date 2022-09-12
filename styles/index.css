@@ -123,7 +123,7 @@ table {
 }
 .navbar .container .logo .logo-icon {
   color: #0083ff;
-  background-image: url(/images/sort-icon.png);
+  background-image: url(../images/sort-icon.png);
   background-repeat: no-repeat;
   width: 24px;
   height: 24px;
@@ -258,6 +258,11 @@ table {
   background-color: red;
   color: #fff;
 }
+.navbar .container .btn .shuffle-btn.disabled {
+  background-color: transparent;
+  box-shadow: 0 0 0 1px #c9c9c9;
+  color: #c9c9c9;
+}
 .navbar .container .btn .sort-btn {
   outline: none;
   cursor: pointer;
@@ -291,14 +296,14 @@ table {
 .navbar .container .small-device-icon {
   display: none;
 }
-.navbar .container .small-device-icon .menu-icon {
+.navbar .container .small-device-icon .menu-btn {
   display: none;
   background-image: url(../images/menu-icon.png);
   background-repeat: no-repeat;
   width: 24px;
   height: 24px;
 }
-.navbar .container .small-device-icon .close-icon {
+.navbar .container .small-device-icon .menu-btn.active {
   display: none;
   background-image: url(../images/close-icon.png);
   background-repeat: no-repeat;
@@ -330,10 +335,11 @@ table {
   .navbar .container .logo {
     display: flex;
   }
-  .navbar .container .algo.unactive {
+  .navbar .container .algo {
     display: none;
   }
   .navbar .container .algo.active {
+    display: block;
     position: absolute;
     top: 56px;
     right: 0px;
@@ -390,6 +396,11 @@ table {
     width: 50px;
     height: 50px;
   }
+  .navbar .container .btn .shuffle-btn.disabled {
+    background-color: #c9c9c9;
+    box-shadow: none;
+    color: none;
+  }
   .navbar .container .btn .sort-btn {
     background-color: #0083ff;
     border: none;
@@ -414,14 +425,13 @@ table {
   .navbar .container .small-device-icon {
     display: block;
   }
-  .navbar .container .small-device-icon .menu-icon {
+  .navbar .container .small-device-icon .menu-btn {
     display: block;
     border: none;
   }
-  .navbar .container .small-device-icon .close-icon.active {
+  .navbar .container .small-device-icon .menu-btn.active {
     display: block;
     border: none;
-    background-color: red;
   }
   .main .container {
     margin: 66px 40px;

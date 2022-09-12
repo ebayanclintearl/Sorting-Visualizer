@@ -1,5 +1,6 @@
 import { divColors } from '../Utils/Configs.js';
 import DivConfig from '../Utils/divConfig.js';
+import { enableButtons } from '../Utils/helperBtns.js';
 class SelectionSort {
   constructor() {
     this.arr = [];
@@ -71,6 +72,7 @@ class SelectionSort {
         color: divColors.correct,
       });
     }
+    enableButtons();
   }
   #swap({ firstIndex, secondIndex }) {
     let tmp = this.arr[firstIndex];
