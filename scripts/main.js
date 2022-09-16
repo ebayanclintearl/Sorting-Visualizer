@@ -53,11 +53,20 @@ const renderDivs = () => {
 
 const runDefault = () => {
   randNumbers.size = size.medium;
-  DivConfig.delay = speed.moderate;
+  DivConfig.delay = speed.fast;
   renderDivs();
 };
 
 window.onload = runDefault();
+
+shuffleButton.addEventListener('click', () => {
+  renderDivs();
+});
+sortButton.addEventListener('click', () => {
+  sortType.start();
+  DivConfig.comulativeDelay = 0;
+  if (!sortType.isObjEmpty()) disabledButtons();
+});
 
 sizeBtns.forEach((button) => {
   button.addEventListener('click', (e) => {
@@ -104,15 +113,6 @@ speedBtns.forEach((button) => {
         return;
     }
   });
-});
-
-shuffleButton.addEventListener('click', () => {
-  renderDivs();
-});
-sortButton.addEventListener('click', () => {
-  sortType.start();
-  DivConfig.comulativeDelay = 0;
-  if (!sortType.isObjEmpty()) disabledButtons();
 });
 
 algoBtns.forEach((button) => {

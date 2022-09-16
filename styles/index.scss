@@ -78,7 +78,6 @@ $light-grey-color: #c9c9c9;
         }
       }
     }
-
     .dropdowns {
       display: inline-flex;
       .dropdown {
@@ -234,7 +233,7 @@ $light-grey-color: #c9c9c9;
   .container {
     display: flex;
     align-items: flex-end;
-    height: calc(80vh - 76px);
+    height: calc(80vh - 56px);
     margin: calc(56px + 10px) 100px;
     border: 2px solid $light-grey-color;
     div {
@@ -286,6 +285,9 @@ $light-grey-color: #c9c9c9;
             }
           }
         }
+      }
+      .dropdowns {
+        display: none;
       }
       .btn {
         position: fixed;

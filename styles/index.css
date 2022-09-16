@@ -317,7 +317,7 @@ table {
 .main .container {
   display: flex;
   align-items: flex-end;
-  height: calc(80vh - 76px);
+  height: calc(80vh - 56px);
   margin: 66px 100px;
   border: 2px solid #c9c9c9;
 }
@@ -368,6 +368,9 @@ table {
   .navbar .container .algo.active ul li button:focus {
     background-color: white;
     color: #0083ff;
+  }
+  .navbar .container .dropdowns {
+    display: none;
   }
   .navbar .container .btn {
     position: fixed;
