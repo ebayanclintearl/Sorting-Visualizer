@@ -53,10 +53,17 @@ const renderDivs = () => {
 };
 
 const runDefault = () => {
-  sizeBtnTitle.innerText = size.mediumText;
-  speedBtnTitle.innerText = speed.fastText;
-  randNumbers.config = size.medium;
-  DivConfig.delay = speed.fast;
+  if (window.innerWidth < 1400) {
+    sizeBtnTitle.innerText = size.smallText;
+    speedBtnTitle.innerText = speed.moderateText;
+    randNumbers.config = size.small;
+    DivConfig.delay = speed.moderate;
+  } else {
+    sizeBtnTitle.innerText = size.mediumText;
+    speedBtnTitle.innerText = speed.moderateText;
+    randNumbers.config = size.medium;
+    DivConfig.delay = speed.moderate;
+  }
   renderDivs();
 };
 
@@ -129,6 +136,10 @@ algoBtns.forEach((button) => {
     if (algoText === 'merge') sortType.type = mergeSort;
     if (algoText === 'quick') sortType.type = quickSort;
     if (algoText === 'heap') sortType.type = heapSort;
+
+    menuBtn.classList.toggle('active');
+    algo.classList.toggle('active');
+    smallDeviceBtn.classList.toggle('disabled');
   });
 });
 
