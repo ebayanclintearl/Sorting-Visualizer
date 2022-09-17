@@ -217,12 +217,16 @@ $light-grey-color: #c9c9c9;
         background-repeat: no-repeat;
         width: 24px;
         height: 24px;
+        outline: none;
+        background-color: white;
         &.active {
           display: none;
           background-image: url(../images/close-icon.png);
           background-repeat: no-repeat;
           width: 24px;
           height: 24px;
+          outline: none;
+          background-color: white;
         }
       }
     }
@@ -292,6 +296,9 @@ $light-grey-color: #c9c9c9;
       .btn {
         position: fixed;
         bottom: 20px;
+        display: inline-flex;
+        flex-direction: row-reverse;
+        column-gap: 5px;
         .shuffle-btn {
           display: flex;
           align-items: center;
@@ -304,7 +311,6 @@ $light-grey-color: #c9c9c9;
           padding: 0px;
           min-width: 0px;
           margin: 0px;
-          margin-bottom: 5px;
           span {
             display: none;
           }

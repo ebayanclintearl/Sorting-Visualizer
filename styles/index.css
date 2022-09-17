@@ -302,6 +302,8 @@ table {
   background-repeat: no-repeat;
   width: 24px;
   height: 24px;
+  outline: none;
+  background-color: white;
 }
 .navbar .container .small-device-icon .menu-btn.active {
   display: none;
@@ -309,6 +311,8 @@ table {
   background-repeat: no-repeat;
   width: 24px;
   height: 24px;
+  outline: none;
+  background-color: white;
 }
 
 .main {
@@ -375,6 +379,10 @@ table {
   .navbar .container .btn {
     position: fixed;
     bottom: 20px;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
   }
   .navbar .container .btn .shuffle-btn {
     display: flex;
@@ -388,7 +396,6 @@ table {
     padding: 0px;
     min-width: 0px;
     margin: 0px;
-    margin-bottom: 5px;
   }
   .navbar .container .btn .shuffle-btn span {
     display: none;
