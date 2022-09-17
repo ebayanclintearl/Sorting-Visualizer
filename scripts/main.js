@@ -21,6 +21,7 @@ const speedBtns = document.querySelectorAll('#speed-btns button');
 const algoBtns = document.querySelectorAll('.algo ul li button');
 const algo = document.querySelector('.algo.unactive');
 const menuBtn = document.querySelector('.menu-btn');
+const smallDeviceBtn = document.querySelector('.btn');
 
 const randNumbers = new RandomNumbers();
 const divGenerator = new DivGenerator();
@@ -52,7 +53,9 @@ const renderDivs = () => {
 };
 
 const runDefault = () => {
-  randNumbers.size = size.medium;
+  sizeBtnTitle.innerText = size.mediumText;
+  speedBtnTitle.innerText = speed.fastText;
+  randNumbers.config = size.medium;
   DivConfig.delay = speed.fast;
   renderDivs();
 };
@@ -73,17 +76,17 @@ sizeBtns.forEach((button) => {
     let textTarget = e.target.innerText.toLowerCase();
     switch (textTarget) {
       case 'small':
-        randNumbers.size = size.small;
+        randNumbers.config = size.small;
         sizeBtnTitle.innerText = size.smallText;
         renderDivs();
         break;
       case 'medium':
-        randNumbers.size = size.medium;
+        randNumbers.config = size.medium;
         sizeBtnTitle.innerText = size.mediumText;
         renderDivs();
         break;
       case 'large':
-        randNumbers.size = size.large;
+        randNumbers.config = size.large;
         sizeBtnTitle.innerText = size.largeText;
         renderDivs();
         break;
@@ -132,4 +135,5 @@ algoBtns.forEach((button) => {
 menuBtn.addEventListener('click', () => {
   menuBtn.classList.toggle('active');
   algo.classList.toggle('active');
+  smallDeviceBtn.classList.toggle('disabled');
 });

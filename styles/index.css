@@ -366,12 +366,12 @@ table {
     height: calc((100vh - 56px) / 6);
   }
   .navbar .container .algo.active ul li button:hover {
-    background-color: white;
-    color: #c9c9c9;
+    background-color: #0083ff;
+    color: white;
   }
   .navbar .container .algo.active ul li button:focus {
-    background-color: white;
-    color: #0083ff;
+    background-color: #0083ff;
+    color: white;
   }
   .navbar .container .dropdowns {
     display: none;
@@ -383,6 +383,9 @@ table {
     flex-direction: row-reverse;
     -moz-column-gap: 5px;
          column-gap: 5px;
+  }
+  .navbar .container .btn.disabled {
+    display: none;
   }
   .navbar .container .btn .shuffle-btn {
     display: flex;

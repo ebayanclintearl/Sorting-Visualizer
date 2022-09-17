@@ -1,15 +1,15 @@
 export const size = {
-  small: 30,
-  medium: 70,
-  large: 100,
+  small: { size: 10, step: 10 },
+  medium: { size: 20, step: 5 },
+  large: { size: 50, step: 2 },
   smallText: 'SIZE: small',
   mediumText: 'SIZE: medium',
   largeText: 'SIZE: large',
 };
 export const speed = {
-  slow: 1000,
+  slow: 800,
   moderate: 50,
-  fast: 1,
+  fast: 10,
   slowText: 'SPEED: slow',
   moderateText: 'SPEED: moderate',
   fastText: 'SPEED: fast',

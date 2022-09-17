@@ -278,12 +278,12 @@ $light-grey-color: #c9c9c9;
                 width: 100%;
                 height: calc((100vh - 56px) / 6);
                 &:hover {
-                  background-color: white;
-                  color: $light-grey-color;
+                  background-color: $light-blue-color;
+                  color: white;
                 }
                 &:focus {
-                  background-color: white;
-                  color: $light-blue-color;
+                  background-color: $light-blue-color;
+                  color: white;
                 }
               }
             }
@@ -299,6 +299,9 @@ $light-grey-color: #c9c9c9;
         display: inline-flex;
         flex-direction: row-reverse;
         column-gap: 5px;
+        &.disabled {
+          display: none;
+        }
         .shuffle-btn {
           display: flex;
           align-items: center;
