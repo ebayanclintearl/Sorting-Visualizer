@@ -127,6 +127,8 @@ table {
   background-repeat: no-repeat;
   width: 24px;
   height: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
   padding-bottom: 2px;
 }
 .navbar .container .logo .logo-text {
@@ -183,6 +185,8 @@ table {
   background-repeat: no-repeat;
   width: 24px;
   height: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .navbar .container .dropdowns .dropdown:hover .dropdown-content {
   display: block;
@@ -203,6 +207,8 @@ table {
   background-repeat: no-repeat;
   width: 24px;
   height: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .navbar .container .dropdowns .dropdown .dropdown-content {
   display: none;
@@ -302,6 +308,8 @@ table {
   background-repeat: no-repeat;
   width: 24px;
   height: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
   outline: none;
   background-color: white;
 }
@@ -311,6 +319,8 @@ table {
   background-repeat: no-repeat;
   width: 24px;
   height: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
   outline: none;
   background-color: white;
 }
@@ -408,6 +418,8 @@ table {
     background-repeat: no-repeat;
     width: 50px;
     height: 50px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .navbar .container .btn .shuffle-btn.disabled {
     background-color: #c9c9c9;
@@ -434,6 +446,8 @@ table {
     background-repeat: no-repeat;
     width: 30px;
     height: 30px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .navbar .container .small-device-icon {
     display: block;
