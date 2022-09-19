@@ -409,6 +409,8 @@ table {
     padding: 0px;
     min-width: 0px;
     margin: 0px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
   .navbar .container .btn .shuffle-btn span {
     display: none;
@@ -437,6 +439,8 @@ table {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
   .navbar .container .btn .sort-btn span {
     display: none;
