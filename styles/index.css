@@ -379,7 +379,7 @@ table {
     background-color: #0083ff;
     color: white;
   }
-  .navbar .container .algo.active ul li button:focus {
+  .navbar .container .algo.active ul li button:active {
     background-color: #0083ff;
     color: white;
   }
