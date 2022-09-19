@@ -22,4 +22,4 @@
   - Speed visualization (3 options)
   - Shuffle (Randomly generate new data).
   
-  Live version: 
+  Live version: https://ebayanclintearl.github.io/Sorting-Visualizer/
